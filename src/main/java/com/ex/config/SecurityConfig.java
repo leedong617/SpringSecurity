@@ -41,8 +41,7 @@ public class SecurityConfig {
 		 * anyRequest requestMatchers에 해당되지 않는 모든 uri 가장 마지막에 설정 되어야함
 		 * */
 		http.authorizeHttpRequests((auth) -> auth
-                .requestMatchers("/login").permitAll()
-                .requestMatchers("/").hasAnyRole("USER")
+                .requestMatchers("/login","/","/join").permitAll()
                 .requestMatchers("/manager").hasAnyRole("MANAGER")
                 .requestMatchers("/admin").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
