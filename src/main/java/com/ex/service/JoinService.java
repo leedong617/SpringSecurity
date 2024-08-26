@@ -28,6 +28,7 @@ public class JoinService {
 
         data.setUsername(dto.getUsername());
         data.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
+        // role admin 임의 설정
         data.setRole("ROLE_ADMIN");
 
 
