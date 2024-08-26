@@ -8,15 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.ex.entity.UserEntity;
 
+import lombok.RequiredArgsConstructor;
+@RequiredArgsConstructor
 public class CustomUserDetails implements UserDetails {
 
-    private UserEntity userEntity;
-
-    public CustomUserDetails(UserEntity userEntity) {
-
-        this.userEntity = userEntity;
-    }
-
+    private final UserEntity userEntity;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
